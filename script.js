@@ -28,72 +28,55 @@ function generatePassword(){
     "Click OK if you want to include uppercase characters"
   );
 
-//   let password = ();
 
-// if (passwordUpper){
-//     return let password = special;
-//  } else{
-//         return let password = "";
+const possibleCharacters = [];
 
-// }
+if(passwordSpecial){
+    possibleCharacters.push(special);
+    return possibleCharacters;
+   console.log(possibleCharacters);
+}
 
-if (passwordSpecial && passwordLower && passwordNumeric && passwordUpper) {
-  let fullPassword= upper.concat(lower,numeric,special);
-  let randomPassword=fullPassword.sort((a,b)=>0.5 - Math.random());
-  let password = randomPassword.splice(0,passwordLength);
-  console.log("Final password "+password);
-} 
+if(passwordNumeric){
+    possibleCharacters.push(numeric);
+    return possibleCharacters;
+   console.log(possibleCharacters);
+}
 
-if (!passwordSpecial && passwordLower && passwordNumeric && passwordUpper) {
-    let fullPassword= upper.concat(lower,numeric,);
-    let randomPassword=fullPassword.sort((a,b)=>0.5 - Math.random());
-    let password = randomPassword.splice(0,passwordLength);
-    console.log("Final password "+password);
-  } 
+if(passwordUpper){
+    possibleCharacters.push(upper);
+    return possibleCharacters;
+    console.log(possibleCharacters);
+}
 
-  if (!passwordSpecial && !passwordLower && passwordNumeric && passwordUpper) {
-    let fullPassword= upper.concat(numeric,);
-    let randomPassword=fullPassword.sort((a,b)=>0.5 - Math.random());
-    let password = randomPassword.splice(0,passwordLength);
-    console.log("Final password "+password);
-  } 
+if(passwordLower){
+    possibleCharacters.push(lower);
+    return possibleCharacters;
+   console.log(possibleCharacters);
+}
 
+if(!passwordLower && !passwordNumeric && !passwordUpper && !passwordSpecial){
+    alert("Please select at least one option")
+    return
+}
 
-// if (passwordSpecial && passwordNumeric && !passwordUpper && !passwordLower) {
-//   let password = special.concat(numeric);
-//   console.log(password);
-//   let randomPassword=password.sort((a,b)=>0.5 - Math.random());
-//   console.log("password is "+ randomPassword);
-// }
-
-// if (passwordSpecial && passwordNumeric && passwordUpper) {
-//   let password = special.concat(numeric, upper);
-//   console.log(password);
-// }
-
-// if (passwordSpecial && passwordNumeric && passwordUpper && passwordLower) {
-//   let password = special.concat(numeric, upper, lower);
-//   console.log(password);
-// }
+console.log("Character length to use is "+ passwordLength);
+console.log("All possible Characters in correct order "+ possibleCharacters);
+let randomPassword = possibleCharacters.sort((a,b)=>0.5 - Math.random());
+console.log("Random order before length calculated is " + randomPassword);
+let password = randomPassword.splice(0,passwordLength);
+console.log("Final password "+password);
 
 }
 
-//   if (passwordSpecial && passwordNumeric && passwordLower && passwordUpper){
-//         let newPassword= upper.concat(lower,numeric,special);
-//         console.log(newPassword);
-//         let randomPassword=newPassword.sort((a,b)=>0.5 - Math.random());
-//         //let randomPassword = newPassword[Math.floor(Math.random()*newPassword.length)];
-//         console.log(randomPassword);
-//   } else if(!passwordSpecial && !passwordNumeric){
-//       let newPassword=upper.concat(lower);
-//       console.log("newPassword");
-//       let randomPassword=newPassword.sort((a,b)=>0.5 - Math.random());
-//         //let randomPassword = newPassword[Math.floor(Math.random()*newPassword.length)];
-//         console.log(randomPassword);
 
-//   }
-  
-// }
+// let passwordLength = 2
+// const possibleCharacters = ["a","b","c","d","e"]
+// console.log("Characters in correct order "+ possibleCharacters);
+// let randomPassword=possibleCharacters.sort((a,b)=>0.5 - Math.random());
+// console.log("Random order is " +randomPassword);
+// let password = randomPassword.splice(0,passwordLength);
+// console.log("Final password "+password);
 
 
 // Write password to the #password input
