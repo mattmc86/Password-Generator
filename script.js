@@ -29,53 +29,54 @@ function generatePassword(){
   );
 
 
-const possibleCharacters = [];
+  let possibleCharacters = [];
 
-if(passwordSpecial){
-    possibleCharacters.push(special);
-    return possibleCharacters;
+  if(passwordSpecial){
+    possibleCharacters = possibleCharacters.concat(special);
    console.log(possibleCharacters);
-}
+  }
 
-if(passwordNumeric){
-    possibleCharacters.push(numeric);
-    return possibleCharacters;
+  if(passwordNumeric){
+    possibleCharacters = possibleCharacters.concat(numeric);
+    
    console.log(possibleCharacters);
-}
+  }
 
-if(passwordUpper){
-    possibleCharacters.push(upper);
-    return possibleCharacters;
+  if(passwordUpper){
+    possibleCharacters = possibleCharacters.concat(upper);
+    
     console.log(possibleCharacters);
-}
+  }
 
-if(passwordLower){
-    possibleCharacters.push(lower);
-    return possibleCharacters;
+  if(passwordLower){
+    possibleCharacters = possibleCharacters.concat(lower);
+  
    console.log(possibleCharacters);
-}
+  }
 
-if(!passwordLower && !passwordNumeric && !passwordUpper && !passwordSpecial){
+  if(!passwordLower && !passwordNumeric && !passwordUpper && !passwordSpecial){
     alert("Please select at least one option")
     return
+  }
+
+  console.log("Character length to use is "+ passwordLength);
+  console.log("All possible Characters in correct order "+ possibleCharacters);
+  let randomPassword = possibleCharacters.sort((a,b)=>0.5 - Math.random());
+  console.log("Random order before length calculated is " + randomPassword);
+  let password = randomPassword.splice(0,passwordLength);
+  console.log("Final password "+password);
+
+  return password;
+
 }
 
-console.log("Character length to use is "+ passwordLength);
-console.log("All possible Characters in correct order "+ possibleCharacters);
-let randomPassword = possibleCharacters.sort((a,b)=>0.5 - Math.random());
-console.log("Random order before length calculated is " + randomPassword);
-let password = randomPassword.splice(0,passwordLength);
-console.log("Final password "+password);
 
-}
-
-
-// let passwordLength = 2
+// let userLength = 2
 // const possibleCharacters = ["a","b","c","d","e"]
 // console.log("Characters in correct order "+ possibleCharacters);
 // let randomPassword=possibleCharacters.sort((a,b)=>0.5 - Math.random());
 // console.log("Random order is " +randomPassword);
-// let password = randomPassword.splice(0,passwordLength);
+// let password = randomPassword.splice(0,userLength);
 // console.log("Final password "+password);
 
 
