@@ -2,10 +2,10 @@
 
 var generateBtn = document.querySelector("#generate");
 
-const upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-const lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-const numeric = [1,2,3,4,5,6,7,8,9,0]
-const special = ["!","@","£","%","&"]
+const upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+const lower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+const numeric = [1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0]
+const special = ["!","@","£","%","&","!","@","£","%","&"]
 
 function generatePassword(){
     let passwordLength = prompt(
@@ -65,20 +65,18 @@ function generatePassword(){
   console.log("Random order before length calculated is " + randomPassword);
   let password = randomPassword.splice(0,passwordLength);
   console.log("Final password "+password);
+  password=password.join(' ');
 
   return password;
 
 }
 
 
-// let userLength = 2
-// const possibleCharacters = ["a","b","c","d","e"]
-// console.log("Characters in correct order "+ possibleCharacters);
-// let randomPassword=possibleCharacters.sort((a,b)=>0.5 - Math.random());
-// console.log("Random order is " +randomPassword);
-// let password = randomPassword.splice(0,userLength);
-// console.log("Final password "+password);
 
+let newPassword = () => {
+  let commaPassword = ["a,b,c,d"];
+  console.log("password is "+ commaPassword.join(''));
+}
 
 // Write password to the #password input
 function writePassword() {
