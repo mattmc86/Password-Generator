@@ -65,7 +65,7 @@ function generatePassword(){
   console.log("Random order before length calculated is " + randomPassword);
   let password = randomPassword.splice(0,passwordLength);
   console.log("Final password "+password);
-  password=password.join(' ');
+  password=password.join('');
 
   return password;
 

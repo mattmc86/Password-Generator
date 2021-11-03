@@ -17,13 +17,10 @@ Once the selections have been made a random password will be displayed in the te
 Roadmap
 The page currently satisfies the initial acceptance criteria. However, I will be making improvements over the coming months including but not limited to:
 
-Code refinement - lok for code to allow characters to repeat rather than reuse them in the array - this was to allow 128 characters to be used.
-
-
-
+Code refinement - look for code to allow characters to repeat rather than reuse them in the array - this was to allow 128 characters to be used.
 
 
 Contact
 Name: Matthew McKenna email:matthewmckenna1986@hotmail.com
 
-Project Link: https://mattmc86.github.io/mattMcKennaPortfolio/
+Project Link: https://mattmc86.github.io/Password-Generator/
